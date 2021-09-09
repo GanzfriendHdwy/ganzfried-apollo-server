@@ -13,7 +13,8 @@ const Link = (sequelize, DataTypes) => {
   Link.init(
     {
       url: DataTypes.STRING,
-      slug: DataTypes.STRING
+      slug: DataTypes.STRING,
+      modifiedUrl: DataTypes.STRING
     },
     {
       sequelize,
