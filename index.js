@@ -1,5 +1,6 @@
 const { ApolloServer, gql } = require("apollo-server");
-const Link = require("./models");
+const db = require("./models");
+const { Link } = db;
 
 const typeDefs = gql`
   type Link {
