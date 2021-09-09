@@ -1,5 +1,5 @@
 const { ApolloServer, gql } = require("apollo-server");
-const Link = require("./models/link");
+const Link = require("./models");
 
 const typeDefs = gql`
   type Link {
@@ -10,13 +10,17 @@ const typeDefs = gql`
   type Query {
     links: [Link]
   }
+
+  type Mutation {
+    createLink(url: String!, slug: String!): Link!
+  }
 `;
 
 const resolvers = {
   Query: {
     // hello: (root, args, context) => "Hello world!"
-    links: () => {
-      return Link.findAll();
+    links: async () => {
+      return await Link.findAll();
     }
   },
   Mutation: {

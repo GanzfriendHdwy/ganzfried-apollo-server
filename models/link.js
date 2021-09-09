@@ -1,5 +1,5 @@
 const { Model } = require("sequelize");
-module.exports = (sequelize, DataTypes) => {
+const Link = (sequelize, DataTypes) => {
   class Link extends Model {
     /**
      * Helper method for defining associations.
@@ -22,3 +22,5 @@ module.exports = (sequelize, DataTypes) => {
   );
   return Link;
 };
+
+module.exports = Link;
